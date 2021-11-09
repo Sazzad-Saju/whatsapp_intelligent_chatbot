@@ -1,6 +1,8 @@
 //whatsapp_intelligent_chatbot
 // (c)-2021-[Sazzad-Saju]
 
+const fetch = (...args) =>
+    import ('node-fetch').then(({ default: fetch }) => fetch(...args));
 const { Client } = require('whatsapp-web.js');
 const qrcode = require('qrcode-terminal');
 const client = new Client();
@@ -37,6 +39,7 @@ client.on('message', message => {
     })
     if (matchPhone) {
         var selectedData = false;
+        var tellJokes = false;
         var targetMsg;
         var str = message.body;
         //list of auto replies
@@ -67,12 +70,34 @@ client.on('message', message => {
         } else if (/Help/i.test(str)) {
             selectedData = true;
             targetMsg = 'Please mail me for any queries at sazzadsaju17@gmail.com.';
+        } else if (/Good/i.test(str)) {
+            selectedData = true;
+            targetMsg = 'I am happy that you liked!';
+        } else if (/Bye/i.test(str)) {
+            selectedData = true;
+            targetMsg = 'See you later!';
+        } else if (/😳/i.test(str)) {
+            selectedData = true;
+            targetMsg = '😅';
+        } else if (/Joke/i.test(str)) {
+            selectedData = true;
+            tellJokes = true;
+            fetch('http://api.icndb.com/jokes/random')
+                .then(res => res.json())
+                .then(data => {
+                    message.reply(data.value.joke);
+                })
+                .catch(err => {
+                    console.log(err);
+                })
         } else {
             targetMsg = 'Sorry I am not available right now. Catch you later. Kind Reards, Sazzad Saju';
         }
 
         if (selectedData) {
-            message.reply(targetMsg);
+            if (tellJokes != true) {
+                message.reply(targetMsg);
+            }
         } else {
             message.reply(targetMsg);
         }
