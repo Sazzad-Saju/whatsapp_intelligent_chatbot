@@ -22,8 +22,8 @@ client.on('message', message => {
 
 //Contact-List to Reply
 var contact = [
-    { name: "Saju", phnNo: "01628190468" },
-    { name: "Raktim", phnNo: "01704663145" }
+    { name: "Saju", phnNo: "016281904**" },
+    { name: "Raktim", phnNo: "017046631**" }
 ]
 
 client.on('message', message => {
