@@ -22,3 +22,16 @@ Install fetch for node.js
 npm install node-fetch@2
 ```
 Run code from terminal: `nodemon server.js`. If still gets error: open PowerShell as administrator command `set-ExecutionPolicy Unrestricted` then `A: yes to all`. Set up done. 
+
+# Screenshots
+
+<p>
+  <img src = "img/Screenshot_2021-11-10-03-17-31-85.png" width = "300" >
+  <img src = "img/Screenshot_2021-11-10-03-17-39-64.png" width = "300" >
+  <img src = "img/Screenshot_2021-11-10-03-17-44-58.png" width = "300" >
+ </p>
+<p> 
+    <img src = "img/Screenshot_2021-11-10-03-17-47-85.png" width = "300" >
+  </p>
+  <br> 
+
