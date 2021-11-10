@@ -22,7 +22,7 @@ Install fetch for node.js
 ```bash
 npm install node-fetch@2
 ```
-Run code from terminal: `nodemon server.js`. If still gets error: open PowerShell as administrator command `set-ExecutionPolicy Unrestricted` then `A: yes to all`. Set up done. 
+Run code from terminal: `nodemon server.js`. If still gets error: open PowerShell as administrator command `set-ExecutionPolicy Unrestricted` then `A: yes to all`. Set up done. The output produces a QR code, scan QR code with your What's app for authentication.  
 
 # Screenshots
 
